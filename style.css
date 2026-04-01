@@ -32,6 +32,42 @@ h1 {
   color: #111;
 }
 
+.mode-group {
+  display: flex;
+  gap: 0;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.mode-btn {
+  background: #fff;
+  color: #555;
+  border: none;
+  border-right: 1px solid #ddd;
+  padding: 0.4rem 0.9rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+}
+
+.mode-btn:last-child {
+  border-right: none;
+}
+
+.mode-btn:hover {
+  background: #f0f0f0;
+  color: #111;
+}
+
+.mode-btn.active {
+  background: #111;
+  color: #fff;
+}
+
 #generate-btn {
   background: #111;
   color: #fff;
@@ -76,6 +112,77 @@ h1 {
   flex: 1.08;
 }
 
+/* Seed swatch overrides */
+.seed-swatch {
+  cursor: default;
+  gap: 0.5rem;
+}
+
+.seed-swatch:hover {
+  flex: 1.08;
+}
+
+.seed-label {
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  opacity: 0.6;
+}
+
+.seed-input-row {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.seed-color-picker {
+  width: 30px;
+  height: 30px;
+  border: none;
+  border-radius: 50%;
+  padding: 0;
+  cursor: pointer;
+  background: none;
+  flex-shrink: 0;
+  outline: none;
+  overflow: hidden;
+}
+
+.seed-color-picker::-webkit-color-swatch-wrapper {
+  padding: 0;
+}
+
+.seed-color-picker::-webkit-color-swatch {
+  border: 2px solid rgba(255, 255, 255, 0.45);
+  border-radius: 50%;
+}
+
+.seed-hex-input {
+  width: 86px;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid currentColor;
+  outline: none;
+  font-size: 0.75rem;
+  font-family: 'SF Mono', 'Fira Mono', monospace;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.1rem 0.2rem;
+  opacity: 0.85;
+  transition: opacity 0.15s, border-color 0.15s;
+}
+
+.seed-hex-input:focus {
+  opacity: 1;
+}
+
+.seed-hex-input::placeholder {
+  opacity: 0.4;
+  font-weight: 400;
+}
+
 .lock-btn {
   position: absolute;
   top: 0.5rem;
@@ -114,18 +221,35 @@ h1 {
   letter-spacing: 0.1em;
   text-transform: uppercase;
   padding: 0.3rem 0.6rem;
-  border-radius: 3px;
+}
+
+.copy-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  padding: 0;
   cursor: pointer;
   transition: background 0.15s;
-  position: relative;
 }
 
-.hex-code:hover {
-  background: rgba(255,255,255,0.2);
+.copy-btn:hover {
+  background: rgba(128, 128, 128, 0.2);
 }
 
-.hex-code:active {
-  background: rgba(255,255,255,0.35);
+.copy-btn:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
+}
+
+.copy-btn svg {
+  width: 16px;
+  height: 16px;
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.2));
 }
 
 .copied-toast {
