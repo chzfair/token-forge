@@ -2111,6 +2111,9 @@ function formatDate(iso) {
 function init() {
   renderGallery(loadBrands());
 
+  // Logo — return home from anywhere
+  document.getElementById('logoHomeBtn').addEventListener('click', () => showScreen('home'));
+
   // Start New Brand button
   document.getElementById('startBtn').addEventListener('click', openWizard);
 

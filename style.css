@@ -61,6 +61,11 @@ body {
   gap: 9px;
   color: var(--text-primary);
   text-decoration: none;
+  background: none;
+  border: none;
+  padding: 0;
+  font-family: inherit;
+  cursor: pointer;
 }
 
 .logo-mark {
